@@ -40,6 +40,11 @@
   // admin only
   app.get("/test-3", authenticate, requireRole(Role.ADMIN), (req, res) => {})
 
+// testing endpoint
+app.get("/", (req, res) => { 
+    res.send("Back end is working...")
+})
+
   mongoose
     .connect(MONGO_URI)
     .then(() => {
